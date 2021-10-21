@@ -1,5 +1,7 @@
 # temperature-submit-script.github.io
 上海工程技术大学VPN登录体温登记脚本
+## 基本介绍
+本代码主要利用selenium模拟浏览器登录[学校vpn登录网址](https://web-vpn.sues.edu.cn/)自动填写体温，填写成功后会发送邮箱已确定是否填写成功
 ## 1、环境准备
 python = 3.8
 selenium = 3.141.0
@@ -20,6 +22,7 @@ conda install schedule    # 有可能下载不了，下载不了用pip install
 2、准备chromedriver，文件里自带的chromedriver为unix版本，Mac用户可以直接用
 Linux、Windows用户都可以直接去官网下载，建议Google Chrome和chromedriver都直接下载最新版本
 因为需要版本对应，将下载好的chromedriver放到脚本文件里就可以
+[chromedriver下载链接](http://npm.taobao.org/mirrors/chromedriver)
 
 ---
 ## 3、代码使用说明
