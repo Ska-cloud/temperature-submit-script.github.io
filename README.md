@@ -4,8 +4,11 @@
 本代码主要利用selenium模拟浏览器登录[学校vpn登录网址](https://web-vpn.sues.edu.cn/)自动填写体温，填写成功后会发送邮箱已确定是否填写成功
 ## 1、环境准备
 python = 3.8
+---
 selenium = 3.141.0
+---
 lxml = 4.6.4
+---
 schedule = 1.1.0
 
 pip、conda安装都可以
