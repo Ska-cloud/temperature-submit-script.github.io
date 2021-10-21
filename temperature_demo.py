@@ -67,9 +67,9 @@ def chrome_submit(user, pwd):
 
 # 填报完成发送邮件
 def send_mail(content):
-    my_sender = '1037719686@qq.com'  # 发件人邮箱账号
-    my_pass = 'cxundcibsrwzbcgj'  # 发件人邮箱密码
-    my_user = '1037719686@qq.com'  # 收件人邮箱账号，我这边发送给自己
+    my_sender = 'xxxx@qq.com'  # 发件人邮箱账号
+    my_pass = 'cxundcibsrwbcgj'  # qq邮箱stmp授权码
+    my_user = 'xxxx@qq.com'  # 收件人邮箱账号，我这边发送给自己
 
     try:
         msg = MIMEText(content, 'plain', 'utf-8')
@@ -96,7 +96,7 @@ def submit_temperature(name, pwd):
     now_hour = time.strftime('%H')
     now_data = datetime.datetime.now().strftime('%Y') + '年' + datetime.datetime.now().strftime('%m') + '月' + datetime.datetime.now().strftime('%d') + '日'
     # 上午体温填报
-    if 6 <= int(now_hour) <= 10:
+    if 7 <= int(now_hour) <= 12:
         if not os.path.exists(str(name) + ' ' + str(now_data) + '上午.txt'):
 
             try:
@@ -110,7 +110,7 @@ def submit_temperature(name, pwd):
             send_mail(text)     # 发送邮件
 
     # 下午体温填报
-    if 13 <= int(now_hour) <= 16:
+    if 13 <= int(now_hour) <= 17:
         if not os.path.exists(str(name) + ' ' + str(now_data) + '下午.txt'):
             try:
                 chrome_submit(name, pwd)
@@ -132,21 +132,23 @@ def read_json_config(name, path):
     return username, password
 
 
+# 用户1的线程
 def job1():
-    print('CYJ threading is running.....')
+    print('user1 threading is running.....')
     print('-' * 60)
-    username, password = read_json_config('CYJ', './config.json')
+    username, password = read_json_config('user1', './config.json')
     submit_temperature(username, password)
-    print('CYJ threading was finished.....')
+    print('user1 threading was finished.....')
     print('-' * 60)
 
 
+# 用户2的线程
 def job2():
-    print('ZY threading is running.....')
+    print('user2 threading is running.....')
     print('-' * 60)
-    username, password = read_json_config('ZY', './config.json')
+    username, password = read_json_config('user2', './config.json')
     submit_temperature(username, password)
-    print('ZY threading was finished.....')
+    print('user2 threading was finished.....')
     print('-' * 60)
 
 
