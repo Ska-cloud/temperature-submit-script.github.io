@@ -1,12 +1,12 @@
 {
-	"CYJ": [{
-		"username": "M025120507"
+	"user1": [{
+		"username": "xxxxx"
 	}, {
-		"password": "Cyj19980120"
+		"password": "xxxxx"
 	}],
-	"ZY": [{
-		"username": "M025120532"
+	"user2": [{
+		"username": "xxxxx"
 	}, {
-		"password": "Xiaoyuan007"
+		"password": "xxxxx"
 	}]
 }
