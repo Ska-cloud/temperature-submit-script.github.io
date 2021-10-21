@@ -8,13 +8,13 @@ schedule = 1.1.0
 
 pip、conda安装都可以
 以conda为例说明：
-（```）
+```
 conda create --name temperature python=3.8   # 创建名为temperature的虚拟环境
 conda activate temperature
 conda install selenium
 conda install lxml
 conda install schedule    # 有可能下载不了，下载不了用pip install
-（```）
+```
 ## 其它准备
 1、qq邮箱stmp服务如何设置自行百度，需要获取stmp授权码
 2、准备chromedriver，文件里自带的chromedriver为unix版本，Mac用户可以直接用
@@ -29,8 +29,8 @@ Linux、Windows用户都可以直接去官网下载，建议Google Chrome和chro
 但是填写的字段需要对应于read_json_config(name, path)中的name来提取用户名和密码
 
 ## 部署代码
-（```）
+```
 cd xx/xx/xx/temperature-submit-script
 conda ativate temperature
 python temperature_demo.py
-（```）
+```
