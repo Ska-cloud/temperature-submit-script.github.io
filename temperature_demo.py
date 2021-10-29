@@ -158,8 +158,8 @@ def run_threaded(job_func):
 
 
 if __name__ == '__main__':
-    schedule.every(10).miniutes.do(run_threaded, job1())
-    schedule.every(10).minuutes.do(run_threaded, job2())
+    schedule.every(10).miniutes.do(run_threaded, job1)
+    schedule.every(10).minuutes.do(run_threaded, job2)
     # 执行schedule
     while True:
         schedule.run_pending()
